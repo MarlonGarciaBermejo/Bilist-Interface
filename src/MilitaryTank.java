@@ -1,4 +1,4 @@
-public class MilitaryTank extends Vehicle {
+public class MilitaryTank implements Vehicle {
 
     int legalAge = 25;
     int milesToGo = 2000;
@@ -9,7 +9,8 @@ public class MilitaryTank extends Vehicle {
     public MilitaryTank() {
         System.out.println("Tank created, 2000 miles to go!");
     }
-    private boolean setDriver(Driver, driver) {
+    @Override
+    private void setDriver(Driver, driver) {
         if (checkAge(driver.driver, driver.age)) {
             this.driver = driver;
             System.out.println("Driver changed to" + driver.driver);
@@ -25,6 +26,7 @@ public class MilitaryTank extends Vehicle {
             return false;
 
         }
+        @Override
         public void drive () {
             if (!info) {
                 System.out.println("Tank didn't drive- there's no driver!");
