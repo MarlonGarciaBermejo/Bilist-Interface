@@ -1,4 +1,4 @@
-public class Car extends Vehicle {
+public class Car implements Vehicle {
 
     int legalage = 18;
     int milesDriven = 10;
@@ -8,7 +8,7 @@ public class Car extends Vehicle {
     public Car() {
         System.out.println("Car created. 100 miles to go!");
     }
-
+    @Override
     public void setDriver(Driver driver) {
         if (checkAge(driver.driver, driver.age)) {
             this.driver = driver;
@@ -23,6 +23,7 @@ public class Car extends Vehicle {
             }
             return false;
         }
+        @Override
         public void drive () {
             if (!info) {
                 System.out.println("Car didn't drive- there's no driver!");
